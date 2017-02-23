@@ -1,3 +1,9 @@
-<p>
-  question-index works!
-</p>
+<h2>Index of Questions</h2>
+<div>
+  <a *ngFor="let question of questions" [routerLink]="['/', hero.id]">
+    <div>
+      <h3>{{question.title}}</h3>
+      <p>{{question.content}}</q>
+    </div>
+  </a>
+</div>
