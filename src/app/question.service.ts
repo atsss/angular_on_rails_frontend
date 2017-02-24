@@ -22,7 +22,7 @@ export class QuestionService {
   }
 
   getQuestion(id: number): Promise<Question> {
-    return this.getQuestiones().then(heroes => heroes.find(hero => hero.id === id));
+    return this.getQuestiones().then(questions => questions.find(question => question.id === id));
   }
 
   create(name: string): Promise<Question> {
