@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Question } from 'app/question';
+import { QuestionService } from 'app/question.service';
+
 @Component({
   selector: 'app-question-index',
   templateUrl: './question-index.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionIndexComponent implements OnInit {
 
-  constructor() { }
+  questions: Question[] = [];
+
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
+    this.questionService.getQuestiones().then(questions => this.questions = questions);
   }
 
 }
