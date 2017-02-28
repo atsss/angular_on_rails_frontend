@@ -5,7 +5,7 @@ import { Question } from 'app/question';
 
 @Injectable()
 export class QuestionService {
-  private questionsUrl = 'questions';  // URL to web api
+  private questionsUrl = 'http://127.0.0.1:3000/questions.json';  // URL to web api
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposees only
     return Promise.reject(error.message || error);
