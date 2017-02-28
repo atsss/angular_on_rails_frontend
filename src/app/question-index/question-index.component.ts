@@ -14,8 +14,9 @@ export class QuestionIndexComponent implements OnInit {
 
   constructor(private questionService: QuestionService) { }
 
-  ngOnInit() {
-    this.questionService.getQuestiones().then(questions => this.questions = questions);
+  ngOnInit(): void {
+    this.questionService.getQuestions()
+      .then(questions => this.questions = questions)
   }
 
 }

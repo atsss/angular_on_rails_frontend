@@ -14,15 +14,15 @@ export class QuestionService {
 
   constructor(private http: Http) { }
 
-  getQuestiones(): Promise<Question[]> {
+  getQuestions(): Promise<Question[]> {
     return this.http.get(this.questionsUrl)
                .toPromise()
-               .then(response => response.json().data as Question[])
+               .then(response => response.json().question as Question[])
                .catch(this.handleError);
   }
 
   getQuestion(id: number): Promise<Question> {
-    return this.getQuestiones().then(questions => questions.find(question => question.id === id));
+    return this.getQuestions().then(questions => questions.find(question => question.id === id));
   }
 
   create(name: string): Promise<Question> {
