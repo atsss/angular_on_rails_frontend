@@ -9,11 +9,13 @@ import './rxjs-extensions';
 import { AppComponent } from './app.component';
 import { QuestionIndexComponent } from './question-index/question-index.component';
 import { QuestionService } from './question.service';
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionIndexComponent
+    QuestionIndexComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,
