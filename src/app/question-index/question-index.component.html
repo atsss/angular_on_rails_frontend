@@ -1,6 +1,6 @@
 <h2>Index of Questions</h2>
 <div>
-  <a *ngFor="let question of questions" [routerLink]="['/', question.id]">
+  <a *ngFor="let question of questions" [routerLink]="['/questions', question.id]">
     <div>
       <h3>{{question.title}}</h3>
     </div>
