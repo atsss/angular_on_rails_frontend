@@ -1,3 +1,5 @@
-<p>
-  answers works!
-</p>
+<div *ngIf='answers'>
+  <div *ngFor="let answer of answers">
+    <p>{{answer.content}}</p>
+  </div>
+</div>
