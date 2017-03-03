@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AnswerService } from 'app/answer.service';
 import { Answer } from 'app/answer';
 
@@ -9,14 +9,14 @@ import { Answer } from 'app/answer';
   providers: [AnswerService]
 })
 export class AnswersComponent implements OnInit {
+  @Input() id: number;
 
   answers: Answer[] = [];
 
   constructor(private answerService: AnswerService) { }
 
   ngOnInit(): void {
-    this.answerService.getAnswers()
-      .then(answers => this.answers = answers)
+    this.answerService.getIdAnswers(this.id)
   }
 
 }

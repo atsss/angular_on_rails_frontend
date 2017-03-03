@@ -14,11 +14,14 @@ export class AnswerService {
 
   constructor(private http: Http) { }
 
-  getAnswers(): Promise<Answer[]> {
+  getAllAnswers(): Promise<Answer[]> {
     return this.http.get(this.answersUrl)
                .toPromise()
                .then(response => response.json().answer as Answer[])
                .catch(this.handleError);
   }
 
+  getIdAnswers(id: number): Promise<Answer> {
+    return this.getAllAnswers().then(answers => answers.find(answer => answer.question_id === id));
+  }
 }
