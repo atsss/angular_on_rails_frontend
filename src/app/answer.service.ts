@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from "rxjs/Observable";
 import { Answer } from 'app/answer';
 
 @Injectable()
@@ -14,14 +15,14 @@ export class AnswerService {
 
   constructor(private http: Http) { }
 
-  getAllAnswers(): Promise<Answer[]> {
+  getAllAnswers(): Observable<Answer[]> {
     return this.http.get(this.answersUrl)
-               .toPromise()
-               .then(response => response.json().answer as Answer[])
+               .map(response => response.json().answer as Answer[])
                .catch(this.handleError);
   }
 
-  getIdAnswers(id: number): Promise<Answer> {
-    return this.getAllAnswers().then(answers => answers.find(answer => answer.question_id === id));
+  getIdAnswers(id: number): Observable<Answer[]> {
+    return this.getAllAnswers()
+               .map(answer => answer.filter(answer => answer.question_id === id))
   }
 }
