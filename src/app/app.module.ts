@@ -11,13 +11,15 @@ import { QuestionIndexComponent } from './question-index/question-index.componen
 import { QuestionService } from './question.service';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { AnswersComponent } from './answers/answers.component';
+import { NewQuestionComponent } from './new-question/new-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionIndexComponent,
     QuestionDetailComponent,
-    AnswersComponent
+    AnswersComponent,
+    NewQuestionComponent
   ],
   imports: [
     BrowserModule,
