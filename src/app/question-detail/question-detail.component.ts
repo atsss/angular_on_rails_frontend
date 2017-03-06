@@ -14,17 +14,20 @@ import { QuestionService } from 'app/question.service';
 export class QuestionDetailComponent implements OnInit {
 
   question: Question;
+  id: number;
 
   constructor(
     private questionService: QuestionService,
     private route: ActivatedRoute,
     private location: Location
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.questionService.getQuestion(+params['id']))
-      .subscribe(question => this.question = question);
+      .subscribe((params: Params) => this.id = +params['id']);
+
+    this.questionService.getQuestion(this.id)
+      .then(question => this.question = question);
   }
 
   goBack(): void {

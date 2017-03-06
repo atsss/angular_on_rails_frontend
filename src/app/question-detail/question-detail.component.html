@@ -1,8 +1,9 @@
 <div *ngIf='question'>
   <h2>{{question.title}}</h2>
+  <h2>{{question.id}}</h2>
   <div>
     <label>content: </label>{{question.content}}
   </div>
   <button (click)='goBack()'>Back</button>
 </div>
-<app-answers id = question.id></app-answers>
+<app-answers [id]='id'></app-answers>
