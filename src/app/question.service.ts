@@ -25,11 +25,9 @@ export class QuestionService {
     return this.getQuestions().then(questions => questions.find(question => question.id === id));
   }
 
-  create(name: string): Promise<Question> {
+  create(title: string, content: string): Promise<Question> {
     return this.http
-      .post(this.questionsUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.questionsUrl, JSON.stringify({title: title, content: content}), {headers: this.headers})
       .toPromise()
-      .then(response => response.json().data)
-      .catch(this.handleError);
   }
 }

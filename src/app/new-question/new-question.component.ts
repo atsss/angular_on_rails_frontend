@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
+import { Question } from 'app/question';
+import { QuestionService } from 'app/question.service';
+
 @Component({
   selector: 'app-new-question',
   templateUrl: './new-question.component.html',
@@ -8,12 +11,14 @@ import {NgForm} from '@angular/forms';
 })
 export class NewQuestionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit() {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value.title, f.value.content);
+    //console.log(f.value.title, f.value.content);
+    this.questionService.create(f.value.title, f.value.content)
+        . then(response => console.log(response))
   }
 }
