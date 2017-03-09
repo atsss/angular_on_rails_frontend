@@ -29,5 +29,6 @@ export class QuestionService {
     return this.http
       .post(this.questionsUrl, JSON.stringify({title: title, content: content}), {headers: this.headers})
       .toPromise()
+      .then(response => response.json().question)
   }
 }

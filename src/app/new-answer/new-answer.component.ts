@@ -19,6 +19,6 @@ export class NewAnswerComponent implements OnChanges {
 
   onSubmit(f: NgForm) {
     this.answerService.create(f.value.content, this.id)
-        . then(response => console.log(response))
+        .then(response => console.log(response.content))
   }
 }

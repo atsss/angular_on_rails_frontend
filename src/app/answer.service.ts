@@ -30,5 +30,6 @@ export class AnswerService {
     return this.http
       .post(this.answersUrl, JSON.stringify({content: content, question_id: question_id}), {headers: this.headers})
       .toPromise()
+      .then(response => response.json().answer)
   }
 }
