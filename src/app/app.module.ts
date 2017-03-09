@@ -12,6 +12,7 @@ import { QuestionService } from './question.service';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { AnswersComponent } from './answers/answers.component';
 import { NewQuestionComponent } from './new-question/new-question.component';
+import { NewAnswerComponent } from './new-answer/new-answer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewQuestionComponent } from './new-question/new-question.component';
     QuestionIndexComponent,
     QuestionDetailComponent,
     AnswersComponent,
-    NewQuestionComponent
+    NewQuestionComponent,
+    NewAnswerComponent
   ],
   imports: [
     BrowserModule,
