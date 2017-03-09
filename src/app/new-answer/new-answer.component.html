@@ -1,3 +1,7 @@
-<p>
-  new-answer works!
-</p>
+<h2>Create New Answer</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div>
+    <label>Content: </label><textarea name="content" placeholder="test" ngModel></textarea>
+  </div>
+  <button>Submit</button>
+</form>

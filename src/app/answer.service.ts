@@ -25,4 +25,10 @@ export class AnswerService {
     return this.getAllAnswers()
                .map(answer => answer.filter(answer => answer.question_id === id))
   }
+
+  create(content: string, question_id: number): Promise<Answer> {
+    return this.http
+      .post(this.answersUrl, JSON.stringify({content: content, question_id: question_id}), {headers: this.headers})
+      .toPromise()
+  }
 }
