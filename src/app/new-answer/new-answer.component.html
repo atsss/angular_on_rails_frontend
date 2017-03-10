@@ -1,4 +1,5 @@
 <h2>Create New Answer</h2>
+<label>New Answer: {{newAnswer}}</label>
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
   <div>
     <label>Content: </label><textarea name="content" placeholder="test" ngModel></textarea>

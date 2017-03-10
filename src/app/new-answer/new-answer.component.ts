@@ -11,6 +11,7 @@ import { Answer } from 'app/answer';
 })
 export class NewAnswerComponent implements OnChanges {
   @Input() id: number;
+  newAnswer: string;
 
   constructor(private answerService: AnswerService) { }
 
@@ -19,6 +20,6 @@ export class NewAnswerComponent implements OnChanges {
 
   onSubmit(f: NgForm) {
     this.answerService.create(f.value.content, this.id)
-        .then(response => console.log(response.content))
+        .then(response => this.newAnswer = response.content)
   }
 }
