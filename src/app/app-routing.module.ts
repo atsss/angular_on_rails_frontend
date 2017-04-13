@@ -8,8 +8,8 @@ import { NewQuestionComponent }   from './new-question/new-question.component';
 const routes: Routes = [
   { path: '', redirectTo: '/questions', pathMatch: 'full' },
   { path: 'questions',  component: QuestionIndexComponent },
-  { path: 'questions/:id',  component: QuestionDetailComponent },
-  { path: 'new',  component: NewQuestionComponent }
+  { path: 'questions/new', component: NewQuestionComponent },
+  { path: 'questions/:id', component: QuestionDetailComponent }
 ];
 
 @NgModule({
