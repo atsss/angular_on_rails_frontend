@@ -16,7 +16,6 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
 import { AnswersComponent } from './answers/answers.component';
 import { NewQuestionComponent } from './new-question/new-question.component';
 import { NewAnswerComponent } from './new-answer/new-answer.component';
-import { TabMenuComponent } from './tab-menu/tab-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { TabMenuComponent } from './tab-menu/tab-menu.component';
     QuestionDetailComponent,
     AnswersComponent,
     NewQuestionComponent,
-    NewAnswerComponent,
-    TabMenuComponent
+    NewAnswerComponent
   ],
   imports: [
     BrowserModule,
