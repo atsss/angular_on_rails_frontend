@@ -17,7 +17,6 @@ export class NewQuestionComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    //console.log(f.value.title, f.value.content);
     this.questionService.create(f.value.title, f.value.content)
         .then(response => console.log(response.id))
   }

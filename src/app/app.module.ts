@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import './rxjs-extensions';
 
 // primeng
-import {TabMenuModule,MenuItem} from 'primeng/primeng';
+import {TabMenuModule,MenuItem,InputTextareaModule,ButtonModule} from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { QuestionIndexComponent } from './question-index/question-index.component';
@@ -31,7 +31,9 @@ import { NewAnswerComponent } from './new-answer/new-answer.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    TabMenuModule
+    TabMenuModule,
+    InputTextareaModule,
+    ButtonModule
   ],
   providers: [QuestionService],
   bootstrap: [AppComponent]
