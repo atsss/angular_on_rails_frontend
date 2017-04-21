@@ -6,7 +6,7 @@ import { QuestionService } from 'app/question.service';
 @Component({
   selector: 'app-question-index',
   templateUrl: './question-index.component.html',
-  styleUrls: ['./question-index.component.css']
+  styleUrls: ['./question-index.component.sass']
 })
 export class QuestionIndexComponent implements OnInit {
 

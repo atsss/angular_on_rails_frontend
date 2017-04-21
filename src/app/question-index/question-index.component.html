@@ -1,8 +1,12 @@
 <h2>Index of Questions</h2>
-<div>
-  <a *ngFor="let question of questions" [routerLink]="['/questions', question.id]">
-    <div>
-      <h3>{{question.title}}</h3>
+<p-dataList [value]="questions" [paginator]="true" [rows]="5">
+  <p-header>
+    List of questions
+  </p-header>
+  <ng-template let-question pTemplate="item">
+    <div class="list">
+      <a class="icon fa fa-search" [routerLink]="['/questions', question.id]"></a>
+      {{question.title}}
     </div>
-  </a>
-</div>
+  </ng-template>
+</p-dataList>
