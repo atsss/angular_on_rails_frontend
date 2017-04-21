@@ -43,7 +43,6 @@ import { NewAnswerComponent } from './new-answer/new-answer.component';
     InputTextareaModule,
     ButtonModule,
     DataGridModule,
-    PanelModule,
     DataListModule
   ],
   providers: [QuestionService],
