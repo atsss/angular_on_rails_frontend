@@ -4,7 +4,7 @@
   <div>
     <label>content: </label>{{question.content}}
   </div>
-  <button (click)='goBack()'>Back</button>
+  <button pButton type="button" icon="fa-check" iconPos="left" label="Back" (click)='goBack()'></button>
 </div>
 <app-answers [id]='id'></app-answers>
 <app-new-answer [id]='id'></app-new-answer>
